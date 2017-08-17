@@ -14,6 +14,9 @@
 		01F4E6941F4539EA00812999 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F4E6931F4539EA00812999 /* EntryListTableViewController.swift */; };
 		01F4E6961F453B9400812999 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F4E6951F453B9400812999 /* EntryViewController.swift */; };
 		01F4E6991F453D1B00812999 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F4E6981F453D1B00812999 /* CloudKitManager.swift */; };
+		01F4E69D1F45419400812999 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F4E69C1F45419400812999 /* CloudKit.framework */; };
+		01F4E69F1F4541B500812999 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F4E69E1F4541B500812999 /* Entry.swift */; };
+		01F4E6A21F45428E00812999 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F4E6A11F45428E00812999 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,10 @@
 		01F4E6931F4539EA00812999 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
 		01F4E6951F453B9400812999 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		01F4E6981F453D1B00812999 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		01F4E69A1F45419200812999 /* JournaliOS14CloudKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JournaliOS14CloudKit.entitlements; sourceTree = "<group>"; };
+		01F4E69C1F45419400812999 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		01F4E69E1F4541B500812999 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		01F4E6A11F45428E00812999 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F4E69D1F45419400812999 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +52,10 @@
 			children = (
 				01F4E67B1F45396600812999 /* JournaliOS14CloudKit */,
 				01F4E6971F453CB400812999 /* CloudKitManager */,
+				01F4E6A01F45427100812999 /* Helper */,
 				01F4E67A1F45396600812999 /* Products */,
 				01F4E6921F45398A00812999 /* Resources */,
+				01F4E69B1F45419400812999 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +70,7 @@
 		01F4E67B1F45396600812999 /* JournaliOS14CloudKit */ = {
 			isa = PBXGroup;
 			children = (
+				01F4E69A1F45419200812999 /* JournaliOS14CloudKit.entitlements */,
 				01F4E6911F45398500812999 /* UI */,
 				01F4E6901F45397E00812999 /* View Controllers */,
 				01F4E68F1F45397400812999 /* Model Controller */,
@@ -71,6 +82,7 @@
 		01F4E68E1F45397000812999 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01F4E69E1F4541B500812999 /* Entry.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -120,6 +132,23 @@
 			path = JournaliOS14CloudKit;
 			sourceTree = "<group>";
 		};
+		01F4E69B1F45419400812999 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01F4E69C1F45419400812999 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01F4E6A01F45427100812999 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				01F4E6A11F45428E00812999 /* DateHelper.swift */,
+			);
+			name = Helper;
+			path = JournaliOS14CloudKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,7 +181,16 @@
 				TargetAttributes = {
 					01F4E6781F45396600812999 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = WAN4D79W79;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -192,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F4E69F1F4541B500812999 /* Entry.swift in Sources */,
 				01F4E6941F4539EA00812999 /* EntryListTableViewController.swift in Sources */,
 				01F4E67D1F45396600812999 /* AppDelegate.swift in Sources */,
+				01F4E6A21F45428E00812999 /* DateHelper.swift in Sources */,
 				01F4E6991F453D1B00812999 /* CloudKitManager.swift in Sources */,
 				01F4E6961F453B9400812999 /* EntryViewController.swift in Sources */,
 			);
@@ -320,6 +360,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JournaliOS14CloudKit/JournaliOS14CloudKit.entitlements;
+				DEVELOPMENT_TEAM = WAN4D79W79;
 				INFOPLIST_FILE = JournaliOS14CloudKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wesstpeak.JournaliOS14CloudKit;
@@ -332,6 +374,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JournaliOS14CloudKit/JournaliOS14CloudKit.entitlements;
+				DEVELOPMENT_TEAM = WAN4D79W79;
 				INFOPLIST_FILE = JournaliOS14CloudKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wesstpeak.JournaliOS14CloudKit;
@@ -359,6 +403,7 @@
 				01F4E68D1F45396600812999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
